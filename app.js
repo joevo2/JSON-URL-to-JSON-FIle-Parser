@@ -1,7 +1,7 @@
 const fs = require('fs')
 const fetch = require('node-fetch')
 
-const url = 'https://raw.githubusercontent.com/Dinu/country-nationality-list/master/countries.json'
+const url = 'https://raw.githubusercontent.com/Dinu/country-nationality-list/master/countries.json';
 
 // const file = JSON.parse(await readFileThunk('./countries.json'))
 
@@ -14,7 +14,7 @@ const url = 'https://raw.githubusercontent.com/Dinu/country-nationality-list/mas
 //   })
 // }
 
-const run = async () => {
+(async () => {
   const json = await fetch(url)
     .then(res => res.json())
 
@@ -35,6 +35,4 @@ const run = async () => {
     }
     console.log('File has been created')
   })
-}
-
-run()
+})()
